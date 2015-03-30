@@ -19,7 +19,7 @@ You can write such commands as:
 * **search &lt;N&gt; &lt;query&gt;** — search **query** and add first **N** found tracks into playlist;
 * **me [&lt;N&gt;]** — add tracks from your page (all of them or first **N** if given);
 * **\*/audios&lt;XXXXXX&gt; [&lt;N&gt;]** — add tracks from page of user with id **XXXXXX** (all of them or first **N** if given);
-* **\*/wall&ltXXXXXX&gt;_&ltYYYYYY&gt;** — add tracks attached to post **XXXXXX_YYYYYY**.
+* **\*/wall&lt;XXXXXX&gt;_&lt;YYYYYY&gt;** — add tracks attached to post **XXXXXX_YYYYYY**.
 
 In two last commands * means you can write anything there. For example, you can copy a link to a post or audios page and use it as a command.
 
@@ -39,7 +39,7 @@ To control which tracks should be ignored and which ignore directive should be u
 * **ignore_tracks** — ignore tracks from this command with **track** directive;
 * **ignore_artists** — ignore tracks from this command with **artist** directive.
 
-Command modifiers should be before commands. For example:
+Command modifiers should be written before commands. For example:
 
 	# set up
 	ignore ignored.list
