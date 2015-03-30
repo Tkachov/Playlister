@@ -12,23 +12,23 @@ This repository is a copy of my IntelliJ IDEA project folder. It contains source
 
 There are three ways of providing input for the application:
 * run the application and write commands in standard input stream, and then finish with '.';
-* run the application with '*.txt' console argument. It would read this file and execute commands from it;
+* run the application with "*.txt" console argument. It would read specified file and execute commands from it;
 * pass other console arguments. These arguments would be treated as separate commands.
 
 You can write such commands as:
-* **search** **<N>** **<query>** — search **query** and add first **N** found tracks into playlist;
-* **me** **[<N>]** — add tracks from your page (all of them or first **N** if given);
-* ***/audios<XXXXXX>** **[<N>]** — add tracks from page of user with id **XXXXXX** (all of them or first **N** if given);
-* ***/wall<XXXXXX>_<YYYYYY>** — add tracks attached to post **XXXXXX_YYYYYY**.
+* **search** *N* *query* — search **query** and add first **N** found tracks into playlist;
+* **me** *[N]* — add tracks from your page (all of them or first **N** if given);
+* **\*/audios***XXXXXX* *[N]* — add tracks from page of user with id **XXXXXX** (all of them or first **N** if given);
+* **\*/wall***XXXXXX*_*YYYYYY* — add tracks attached to post **XXXXXX_YYYYYY**.
 
 In two last commands * means you can write anything there. For example, you can copy a link to a post or audios page and use it as a command.
 
 This application can also filter some tracks. For example, if you don't want to listen to a group or don't like a track, you can ask the application to ignore it.
 In order to do that, you should write a special file and specify it using **ignore** **<filename>** command.
 In that file you should use following syntax (each directive on a separate line):
-* **id <ownerId>_<trackId>** — ignore this exact track;
-* **track <artist> -- <title>** — ignore tracks with <artist> and <title> tags;
-* **artist** **<artist>** — ignore tracks of this artist.
+* **id** *ownerId*_*trackId* — ignore this exact track;
+* **track** *artist* **--** *title* — ignore tracks with <artist> and <title> tags;
+* **artist** *artist* — ignore tracks of this artist.
 
 Of course it's not really easy to do on your own, especially if you want to ignore tracks you've added earlier.
 In this case you can use **newIgnoreFile <filename>** command.
@@ -40,6 +40,7 @@ To control which tracks should be ignored and which ignore directive should be u
 * **ignore_artists** — ignore tracks from this command with **artist** directive.
 
 Command modifiers should be before commands. For example:
+
 	# set up
 	ignore ignored.list
 	newIgnoreFile new_ignored.list
