@@ -44,8 +44,8 @@ public class Main {
 		System.out.println("In case you run the program without console arguments (like now), you're able to pass the commands and then finish your input entering '.'.");
 		System.out.println("");
 		System.out.println("Commands:");
-		System.out.println("* /wallXXXXXX_YYYYYY -- get all audio attachments from post XXXXXX_YYYYYY;");
-		System.out.println("* /audiosXXXXXX [N] -- get audios from playlist of user XXXXXX (all of them or first N);");
+		System.out.println("*/wallXXXXXX_YYYYYY -- get all audio attachments from post XXXXXX_YYYYYY;");
+		System.out.println("*/audiosXXXXXX [N] -- get audios from playlist of user XXXXXX (all of them or first N);");
 		System.out.println("me [N] -- get audios from current user playlist (all of them or first N);");
 		System.out.println("search <N> <query> -- search <query> and get first <N> audios.");
 		System.out.println("");
