@@ -26,16 +26,21 @@ public class PlaylistWriter {
 		writer.close();
 	}
 
+	private static String leadingZero(long v) {
+		if(v<10) return "0"+v;
+		return v+"";
+	}
+
 	private static String morphUrl(TrackInfo track) {
 		String url = track.getUrl();
 		if(writeTrackTitles) {
-			//this is something between bug and feature of Spider Player
-			//but this actually works for anything but '/'
-			//it gets what's after '/' and shows as track name
-			//so we just add '/' in title, and then write URL-encoded title,
+			//Spider Player uses filename, but it doesn't care about "?query" part of URL
+			//it gets what's after the last '/' and shows as track name
+			//so we just add '/' in title, and then write title,
 			//replacing every '/' into '\' - the smallest loss to have such a nice thing
-			String title = track.getFullTitle().replace('/', '\\').replace(" ", "%20");
-			url += "&title=/" + title;
+			String title = track.getFullTitle().replace('/', '\\');
+			String duration = " (" + leadingZero(track.getDuration()/60) + ":" + leadingZero(track.getDuration()%60) + ")";
+			url += "&title=/" + title + duration;
 		}
 		return url;
 	}
